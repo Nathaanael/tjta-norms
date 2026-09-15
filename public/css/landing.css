@@ -1,0 +1,390 @@
+html {
+scroll-behavior: smooth;
+}
+
+*, html {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'DM Serif', sans-serif;
+}
+
+body {
+color: black;
+background-color: white; /* Optional: Background color for better contrast */
+}
+
+.scroll-animate {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-animate.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+nav {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0.5rem 1rem; /* Reduced padding */
+width: 100%;
+backdrop-filter: blur(10px);
+background-color: rgba(31, 31, 31, 0.5);
+}
+
+.container-navbar {
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1;
+}
+
+.icon {
+display: flex;
+align-items: center;
+}
+
+.icon img {
+width: 300px; /* Adjusted width */
+}
+
+.navbar-container {
+display: flex;
+justify-content: end;
+flex-grow: 1;
+}
+
+.ul-navbar {
+display: flex;
+list-style: none;
+gap: 1rem; /* Reduced gap */
+margin: 0;
+padding: 0;
+align-items: center;
+}
+
+.li-navbar {
+list-style: none;
+font-size: 18px; /* Reduced font size */
+margin: 10px; /* Reduced margin */
+}
+
+.a-navbar {
+text-decoration: none;
+color: #e0e0e0;
+font-weight: 600;
+padding: 8px 0;
+transition: all 300ms ease-in-out;
+border-bottom: 1px solid transparent;
+}
+
+.li-navbar:hover .a-navbar {
+border-bottom: 1px solid #e0e0e0;
+}
+
+.merk {
+display: flex;
+margin-left: 10px; /* Reduced margin */
+}
+
+.home img {
+transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+width: 80px; /* Adjusted width */
+margin-right: 20px; /* Reduced margin */
+}
+
+.home img:hover {
+transform: scale(1.1);
+opacity: 0.8;
+}
+
+
+.banner {
+width: 100%;
+position: relative;
+}
+.mobile-nav
+{
+display: none;
+}
+
+.banner img {
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0; /* Menyembunyikan semua gambar awalnya */
+transition: opacity 0.5s ease; /* Efek transisi untuk mengubah opacity */
+}
+
+.banner img.active {
+opacity: 1; /* Menampilkan gambar yang aktif */
+}
+
+
+.dashboard {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin: 40px auto;
+width: 90%;
+margin-top: 450px;
+
+}
+
+.box {
+width: 300px;
+height: 200px;
+background-color: navy;
+margin: 20px;
+padding: 20px;
+text-align: center;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+overflow: hidden; /* Ensure the image doesn't overflow the box */
+}
+
+.box:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+margin-top: 0;
+font-size: 24px;
+color: white;
+}
+
+.box img {
+margin-top: 20px; /* Adjust the margin as needed */
+max-width: 100%;
+max-height: calc(100% - 40px); /* Adjust the height to fit within the box */
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 4px;
+object-fit: cover; /* Ensure the image covers the box without stretching */
+}
+
+
+.footer {
+margin-top: 100px;
+background-color: #333;
+color: #fff;
+padding: 50px 0;
+}
+
+.footer-container {
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.footer-section {
+flex: 1;
+margin-right: 20px;
+padding: 0 20px;
+max-width: 300px;
+}
+
+.footer-section img {
+width: 300px;
+margin-bottom: 20px;
+}
+
+.footer-section h3 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+
+.footer-section ul {
+list-style: none;
+padding: 0;
+}
+
+.footer-section ul li {
+margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+color: #fff;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+color: #9B58FC;
+}
+@media (max-width: 767px) {
+.navbar-container {
+display: none;
+}
+
+.hamburger {
+display: block;
+cursor: pointer;
+}
+
+.hamburger .line {
+width: 25px;
+height: 3px;
+background-color: white;
+margin: 5px 0;
+}
+
+.mobile-nav {
+display: none;
+background-color: rgba(31, 31, 31, 0.9);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1000;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.mobile-ul-navbar {
+list-style: none;
+padding: 0;
+text-align: center;
+}
+
+.mobile-li-navbar {
+margin: 20px 0;
+}
+
+.mobile-li-navbar .a-navbar {
+font-size: 24px;
+color: #e0e0e0;
+}
+
+.mobile-li-navbar .a-navbar:hover {
+color: #9B58FC;
+}
+
+.mobile-nav.show {
+display: flex;
+}
+
+.home {
+display: none;
+}
+
+.button {
+display: none;
+}
+
+.icon img {
+width: 50%;
+}
+.banner {
+width: 100%;
+position: relative;
+}
+.container1 {
+margin-top: 0;
+margin-bottom: 20px; /* Tambahkan margin bawah */
+}
+
+.container-title {
+padding: 0;
+flex-direction: column;
+}
+
+.title-img {
+flex: 0; /* Ambil 20% dari lebar container */
+margin-right: 0; /* Margin kanan untuk memberikan jarak */
+margin-left: 0;
+justify-content: center;
+align-items: center;
+}
+
+.title-img img {
+width: 80%; /* Agar gambar sesuai dengan lebar parent */
+margin-bottom: 50px;
+}
+
+.title {
+justify-content: start;
+text-align: left;
+}
+
+.title h1 {
+font-size: 2.5rem; /* Atur ukuran font untuk judul */
+margin-top: 10px; /* Atur margin atas untuk pemisah antara judul dan paragraf */
+text-align: left; /* Mengatur teks judul menjadi rata kiri */
+margin-left: 20px;
+}
+
+.title p {
+padding: 0;
+margin-top: 10px; /* Atur margin atas untuk pemisah antara judul dan paragraf */
+font-size: 1.8rem; /* Atur ukuran font untuk teks */
+text-align: left; /* Mengatur teks paragraf menjadi rata kiri */
+margin-left: 20px;
+}
+.banner-visimisi img
+{
+margin-bottom: 50px;
+}
+.container-visimisi {
+flex-direction: column;
+padding-top: 100px;
+
+}
+
+.visi-misi-image {
+order: -1; /* Memindahkan gambar ke atas */
+width: 80%;
+margin: 0 0 0;
+}
+.visi-misi-content h1
+{
+font-size: 2.5rem;
+}
+.visi-misi-content p
+{
+font-size: 1.8rem;
+}
+.visi-misi-content li
+{
+font-size: 1.8rem;
+}
+
+.footer-container {
+flex-direction: column; /* Atur agar konten footer tampil secara vertikal */
+align-items: center; /* Pusatkan konten secara horizontal pada layar kecil */
+}
+
+.footer-section {
+flex: none; /* Jangan biarkan bagian footer memperluas lebih dari ukuran tetap */
+width: 100%; /* Kontainer footer akan mengambil lebar penuh */
+margin-bottom: 20px; /* Berikan margin bawah antara setiap bagian footer */
+text-align: center; /* Pusatkan teks untuk footer */
+}
+.footer-section img
+{
+width: 50%;
+}
+.footer-section h3 {
+font-size: 1rem; /* Ukuran font untuk judul footer pada layar kecil */
+}
+
+.footer-section ul li a {
+font-size: 0.8rem; /* Ukuran font untuk link footer pada layar kecil */
+}
+
+}
